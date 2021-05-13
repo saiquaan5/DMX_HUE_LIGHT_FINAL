@@ -56,7 +56,7 @@ void pwm_out_init(TIM_TypeDef *timx)
 
 void pwm_set_output(volatile uint8_t *data)
 {
-	// printf2("PWM %d %d %d \r\n",data[0],data[1],data[2]);
+	//printf2("PWM %d %d %d \r\n",data[0],data[1],data[2]);
 	dmxR(data[0]);
 	dmxG(data[1]);
 	dmxB(data[2]);	

@@ -92,6 +92,9 @@ void vSetMaxValue(uint8_t R,uint8_t G,uint8_t B){
 	value[1]=(G>100)?100:G;
 	value[2]=(B>100)?100:B;
 	I2C_WriteFn(RCALIB,value,3);
+	printf2("Value scale 1: %d",value[0]); 
+	printf2("Value scale 2: %d",value[1]); 
+	printf2("Value scale 3: %d",value[2]); 
 }
 
 void vFeedbackIR(){
@@ -99,7 +102,7 @@ void vFeedbackIR(){
 }
 
 void vResponseIR(uint8_t cmd,uint8_t value){
-	IRWrite(0xFE);
+	IRWrite(0xFE); 
 	IRWrite(cmd);
 	IRWrite(value);
 	IRWrite(0xEF);
@@ -128,72 +131,71 @@ void u8_LightDMX_Run(void){
 						vFeedbackIR();
 						vLightDMXDebug(ReceiveData.value[0],ReceiveData.value[1],ReceiveData.value[2]);
 						lightDMX_data.isdebug=0;
-			break;
-			
+			break;		
 //			case SETID_EVENT:
 //						v_LightSetID(ReceiveData.value[0]);
 //						v_LightReadID();
 //						vFeedbackIR();
 //			break;
-			
-			case CMD_Write_Add_To_Light:
-					printf2("reach here\n");
-
-					printf2("Address = %d\n", ReceiveData.value[0]);
-					
+			case CMD_Write_Add_To_Light:				
 					v_LightSetID(ReceiveData.value[0]);
-					vTaskDelay(100);
 					v_LightReadID();
-//					if(lightDMX_data.id==ReceiveData.value[0])
-//						vResponseIR(CMD_Write_Add_To_Light,1);
-//					else
-//						vResponseIR(CMD_Write_Add_To_Light,0);
+					if(lightDMX_data.id==ReceiveData.value[0])
+					{
+						vResponseIR(CMD_Respond_To_Remote,1);
+						printf2("Write address success\r\n");
+					}
+					else
+					{
+						printf2("Write address fail\r\n");
+						vResponseIR(CMD_Respond_To_Remote,0);
+					}
 			break;
 					
-			case CMD_Read_Add_From_Light:{
+			case CMD_Read_Add_From_Light:
+					printf2("Have remote read address\r\n");
 					v_LightReadID();
+					printf2("ID Light: %d",lightDMX_data.id);
 					vResponseIR(CMD_Read_Add_From_Light,lightDMX_data.id);
-			}break;
+			break;
 
-			case CMD_Test_Red:{
+			case CMD_Test_Red:
 					lightDMX_data.isdebug=1;
 					vResponseIR(CMD_Test_Red,1);
 					vLightDMXDebug(DEBUG_R70,4,5);
 					lightDMX_data.isdebug=0;
-			}break;
+			break;
 			
-			case CMD_Test_Green:{
+			case CMD_Test_Green:
 					lightDMX_data.isdebug=1;
 					vResponseIR(CMD_Test_Green,1);
 					vLightDMXDebug(DEBUG_G70,4,5);
 					lightDMX_data.isdebug=0;
-			}break;
+			break;
 			
-			case CMD_Test_Blue:{
+			case CMD_Test_Blue:
 					lightDMX_data.isdebug=1;
 					vResponseIR(CMD_Test_Blue,1);
 					vLightDMXDebug(DEBUG_B70,4,5);
 					lightDMX_data.isdebug=0;
-			}break;
+			break;
 			
-			case CMD_Test_All:{
+			case CMD_Test_All:
 					lightDMX_data.isdebug=1;
 					vResponseIR(CMD_Test_All,1);
 					vLightDMXDebug(DEBUG_ALL,2,5);
 					lightDMX_data.isdebug=0;
-			}break;
+			break;
 			
-			case CMD_Trans_Limit_Power:{
+			case CMD_Trans_Limit_Power:
 				vSetMaxValue(ReceiveData.value[0],ReceiveData.value[0],ReceiveData.value[0]);
 				I2C_ReadFn(RCALIB,(uint8_t*)lightDMX_data.max,3);
-				if(lightDMX_data.max[0]==ReceiveData.value[0])
-						vResponseIR(CMD_Trans_Limit_Power,1);
-					else
-						vResponseIR(CMD_Trans_Limit_Power,0);
-			}break;
-			
+//				if(lightDMX_data.max[0]==ReceiveData.value[0])
+//						vResponseIR(CMD_Trans_Limit_Power,1);
+//					else
+//						vResponseIR(CMD_Trans_Limit_Power,0);
+			break;
 			default:
-				
 			break;
 		}
 	}else{

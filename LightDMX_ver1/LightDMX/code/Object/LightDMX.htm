@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Object\LightDMX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Object\LightDMX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed May 12 16:55:40 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu May 13 15:26:53 2021
 <BR><P>
-<H3>Maximum Stack Usage =        392 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        384 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-vMainTask &rArr; u8_LightDMX_Init &rArr; v_LightReadID &rArr; Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
+vMainTask &rArr; u8_LightDMX_Run &rArr; vFeedbackIR &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
 <P>
 <H3>
 Functions with no stack information
@@ -600,43 +600,35 @@ Global Symbols
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 </UL>
 
-<P><STRONG><a name="[ad]"></a>Caculator_chanel</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, lightdmx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352 + Unknown Stack Size
-<LI>Call Chain = Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf2
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Init
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
+<P><STRONG><a name="[ae]"></a>Caculator_chanel</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, lightdmx.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Init
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
 </UL>
 
-<P><STRONG><a name="[ae]"></a>v_LightReadID</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, lightdmx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 360 + Unknown Stack Size
-<LI>Call Chain = v_LightReadID &rArr; Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
+<P><STRONG><a name="[ad]"></a>v_LightReadID</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, lightdmx.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = v_LightReadID
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caculator_chanel
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caculator_chanel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Init
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightSetID
 </UL>
 
 <P><STRONG><a name="[af]"></a>v_LightSetID</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, lightdmx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 368 + Unknown Stack Size
-<LI>Call Chain = v_LightSetID &rArr; v_LightReadID &rArr; Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = v_LightSetID &rArr; v_LightReadID
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
 <P><STRONG><a name="[b0]"></a>u8_LightDMX_Init</STRONG> (Thumb, 192 bytes, Stack size 32 bytes, lightdmx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392 + Unknown Stack Size
-<LI>Call Chain = u8_LightDMX_Init &rArr; v_LightReadID &rArr; Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
+<BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = u8_LightDMX_Init &rArr; IRDA_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRDA_Init
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caculator_chanel
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caculator_chanel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vMainTask
 </UL>
@@ -654,43 +646,46 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
-<P><STRONG><a name="[bf]"></a>vSetMaxValue</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, lightdmx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = vSetMaxValue
+<P><STRONG><a name="[ba]"></a>vSetMaxValue</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, lightdmx.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 368 + Unknown Stack Size
+<LI>Call Chain = vSetMaxValue &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf2
+</UL>
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
-<P><STRONG><a name="[ba]"></a>vFeedbackIR</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, lightdmx.o(.text))
+<P><STRONG><a name="[bb]"></a>vFeedbackIR</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, lightdmx.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368 + Unknown Stack Size
 <LI>Call Chain = vFeedbackIR &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
-<P><STRONG><a name="[bb]"></a>vResponseIR</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lightdmx.o(.text))
+<P><STRONG><a name="[bc]"></a>vResponseIR</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lightdmx.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = vResponseIR &rArr; IRWrite
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWrite
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
-<P><STRONG><a name="[bd]"></a>u8_LightDMX_Run</STRONG> (Thumb, 400 bytes, Stack size 16 bytes, lightdmx.o(.text))
+<P><STRONG><a name="[be]"></a>u8_LightDMX_Run</STRONG> (Thumb, 422 bytes, Stack size 16 bytes, lightdmx.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
 <LI>Call Chain = u8_LightDMX_Run &rArr; vFeedbackIR &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vResponseIR
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vFeedbackIR
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSetMaxValue
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vResponseIR
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vFeedbackIR
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSetMaxValue
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightDMXDebug
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightSetID
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;v_LightReadID
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vMainTask
@@ -803,9 +798,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart1WriteString
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__c89vsprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vFeedbackIR
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caculator_chanel
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vFeedbackIR
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSetMaxValue
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_ReadWriteEEp
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask_Init
 </UL>
@@ -841,12 +836,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printir
 </UL>
 
-<P><STRONG><a name="[bc]"></a>IRWrite</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, irda.o(.text))
+<P><STRONG><a name="[bd]"></a>IRWrite</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, irda.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = IRWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vResponseIR
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vResponseIR
 </UL>
 
 <P><STRONG><a name="[e3]"></a>IRWriteWLength</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, irda.o(.text), UNUSED)
@@ -972,7 +968,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 </UL>
 
-<P><STRONG><a name="[be]"></a>xQueueGenericReceive</STRONG> (Thumb, 312 bytes, Stack size 56 bytes, queue.o(.text))
+<P><STRONG><a name="[bf]"></a>xQueueGenericReceive</STRONG> (Thumb, 312 bytes, Stack size 56 bytes, queue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = xQueueGenericReceive &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
@@ -988,7 +984,7 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 </UL>
 
 <P><STRONG><a name="[fb]"></a>xQueueReceiveFromISR</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, queue.o(.text), UNUSED)
@@ -1080,7 +1076,7 @@ Global Symbols
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
@@ -1091,7 +1087,7 @@ Global Symbols
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
@@ -1186,7 +1182,7 @@ Global Symbols
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[11d]"></a>vTaskPlaceOnUnorderedEventList</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, tasks.o(.text), UNUSED)
@@ -1214,7 +1210,7 @@ Global Symbols
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 </UL>
 
@@ -1226,7 +1222,7 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>vTaskSetTimeOutState</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, tasks.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[f5]"></a>xTaskCheckForTimeOut</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, tasks.o(.text))
@@ -1237,7 +1233,7 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[ee]"></a>vTaskMissedYield</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, tasks.o(.text))
@@ -1385,7 +1381,7 @@ Global Symbols
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueFull
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[e9]"></a>vPortExitCritical</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, port.o(.text))
@@ -1414,7 +1410,7 @@ Global Symbols
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueFull
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[d]"></a>xPortSysTickHandler</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, port.o(.text))
@@ -2106,7 +2102,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWriteWLength
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWriteString
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart1WriteString
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWrite
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWrite
 </UL>
 
 <P><STRONG><a name="[8b]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
@@ -2144,6 +2140,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWriteWLength
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWriteString
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart1WriteString
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRWrite
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
 </UL>
@@ -2912,7 +2909,7 @@ Local Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[ef]"></a>prvIsQueueFull</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, queue.o(.text))
@@ -2939,7 +2936,7 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[fa]"></a>prvCopyDataFromQueue</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, queue.o(.text))
@@ -2949,7 +2946,7 @@ Local Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[103]"></a>prvInitialiseTaskLists</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, tasks.o(.text))
@@ -3073,7 +3070,7 @@ Local Symbols
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTimerTask
@@ -3152,11 +3149,11 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[43]"></a>vMainTask</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, main_task.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392 + Unknown Stack Size
-<LI>Call Chain = vMainTask &rArr; u8_LightDMX_Init &rArr; v_LightReadID &rArr; Caculator_chanel &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
+<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
+<LI>Call Chain = vMainTask &rArr; u8_LightDMX_Run &rArr; vFeedbackIR &rArr; printf2 &rArr; __c89vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Run
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u8_LightDMX_Init
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Configuration
 </UL>

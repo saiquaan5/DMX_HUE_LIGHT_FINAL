@@ -54,7 +54,8 @@ void IRWriteString(const char *txtString)
 }
 
 void IRWrite(uint8_t u8data){
-	USART_SendData(USART1,u8data); 
+	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) {};   
+	USART_SendData(USART1,u8data);
 }
 
 void IRWriteWLength(const char *txtString)
