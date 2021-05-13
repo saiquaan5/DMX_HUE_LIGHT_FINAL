@@ -1,5 +1,7 @@
 #include "LightDMX.h"
 
+
+
 u8I2C_ReadFn I2C_ReadFn=NULL;
 u8I2C_WriteFn I2C_WriteFn=NULL;
 u8ConfigFn LightDMXConfigFn=NULL;
